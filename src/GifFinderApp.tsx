@@ -1,6 +1,7 @@
 import { SearchInput } from './components/SearchInput'
 import logo from './assets/search-logo.svg'
 import { useState } from 'react'
+import { GifGrid } from './components/GifGrid'
 
 export const GifFinderApp = () => {
   const [searches, setSearches] = useState(['naruto'])
@@ -20,6 +21,11 @@ export const GifFinderApp = () => {
           <img src={logo} alt='logo app' />
         </section>
       </header>
+      <main className='main'>
+        {searches.map((search) => (
+          <GifGrid key={search} query={search} />
+        ))}
+      </main>
     </>
   )
 }

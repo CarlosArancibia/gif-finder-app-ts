@@ -14,6 +14,7 @@ export const SearchInput = ({ onAddSearch }: Props) => {
   const onSubmit = async (event: ChangeEvent<HTMLFormElement>) => {
     event.preventDefault()
     onAddSearch(search)
+    setSearch('')
   }
 
   return (
