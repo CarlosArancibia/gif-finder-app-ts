@@ -4,11 +4,13 @@ import { Gif } from '../models/gif.model'
 
 export const useFetch = (query: string) => {
   const [gifs, setGifs] = useState<Gif[]>([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const getImagesGifs = async () => {
       const newGifs = await getGifs(query)
       setGifs(newGifs)
+      setIsLoading(false)
     }
 
     getImagesGifs()
@@ -16,5 +18,6 @@ export const useFetch = (query: string) => {
 
   return {
     gifs,
+    isLoading,
   }
 }

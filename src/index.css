@@ -75,6 +75,8 @@ input {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   gap: 30px;
+  position: relative;
+  min-height: 400px;
 }
 
 .gif-item {
@@ -93,6 +95,17 @@ input {
 .gif-item footer {
   text-align: center;
   padding: 5px;
+}
+
+.loader {
+  position: absolute;
+  width: 100%;
+  margin-top: 10%;
+}
+
+.loader p {
+  font-size: 1.3rem;
+  text-align: center;
 }
 
 @media only screen and (max-width: 750px) {

@@ -7,6 +7,7 @@ export const GifFinderApp = () => {
   const [searches, setSearches] = useState(['naruto'])
 
   const onAddSearch = (search: string) => {
+    if (searches.includes(search)) return
     setSearches([search, ...searches])
   }
 
